@@ -130,30 +130,35 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 52%;
-    height: 30%;
-    padding: 8px 12px 12px 8px;
-    align-items: flex-start;
-    justify-content: flex-start;
+    width: 55%;
+    height: auto;
+    padding: 0;
+    align-items: flex-end;
+    justify-content: flex-end;
     z-index: 10;
     pointer-events: none;
   }
 
   .frame {
     width: 100%;
-    gap: 6px;
+    gap: 0;
     animation: none;
     opacity: 1;
     transform: none;
     pointer-events: all;
   }
 
+  /* hide caption on mobile */
+  .caption { display: none; }
+
   .photoWrap {
+    width: 100%;
     aspect-ratio: 4/3;
-    max-height: calc(30vh - 52px);
+    max-height: 38vh;
+    border-radius: 16px 0 0 0;
   }
 
-  .captionText {
-    font-size: 0.68rem;
+  .photo {
+    object-fit: cover;
   }
 }

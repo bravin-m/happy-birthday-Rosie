@@ -104,31 +104,39 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 52%;
-    height: 30%;
-    padding: 12px 8px 8px 12px;
-    align-items: flex-end;
-    justify-content: flex-end;
+    width: 55%;
+    height: auto;
+    padding: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
     z-index: 10;
     pointer-events: none;
+    background: transparent;
   }
 
   .frame {
     width: 100%;
-    gap: 6px;
+    gap: 0;
     animation: none;
     opacity: 1;
     transform: none;
     pointer-events: all;
   }
 
-  .label { font-size: 0.68rem; }
+  /* hide label and dots on mobile — keep it clean */
+  .label { display: none; }
+  .dots  { display: none; }
 
   .videoWrap {
-    max-height: calc(30vh - 52px);
+    width: 100%;
+    border-radius: 0 0 16px 0;
+    max-height: none;
   }
 
   .video {
-    max-height: calc(30vh - 52px);
+    width: 100%;
+    height: auto;
+    max-height: 38vh;
+    object-fit: cover;
   }
 }
