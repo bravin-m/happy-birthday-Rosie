@@ -1,3 +1,9 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .layout {
   position: fixed;
   inset: 0;
@@ -21,7 +27,6 @@
   opacity: 1;
 }
 
-/* Ambient floating blobs */
 .blob1, .blob2, .blob3 {
   position: absolute;
   border-radius: 50%;
@@ -62,4 +67,7 @@
     padding: 0;
     overflow: hidden;
   }
+  .layout > *:first-child  { z-index: 10; }
+  .layout > *:nth-child(2) { z-index: 5;  }
+  .layout > *:last-child   { z-index: 10; }
 }

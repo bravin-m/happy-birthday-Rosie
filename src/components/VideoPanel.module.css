@@ -101,33 +101,34 @@
 /* ── MOBILE ─────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .panel {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 48%;
+    width: 52%;
     height: 30%;
     padding: 12px 8px 8px 12px;
     align-items: flex-end;
     justify-content: flex-end;
+    z-index: 10;
+    pointer-events: none;
   }
 
   .frame {
     width: 100%;
-    gap: 8px;
+    gap: 6px;
     animation: none;
     opacity: 1;
     transform: none;
+    pointer-events: all;
   }
 
-  .label {
-    font-size: 0.7rem;
+  .label { font-size: 0.68rem; }
+
+  .videoWrap {
+    max-height: calc(30vh - 52px);
   }
 
   .video {
-    max-height: 100%;
-  }
-
-  .videoWrap {
-    max-height: calc(30vh - 60px);
+    max-height: calc(30vh - 52px);
   }
 }
