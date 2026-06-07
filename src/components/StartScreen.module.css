@@ -1,0 +1,182 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background:
+    radial-gradient(ellipse at 20% 50%, #f8bbd0 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, #fce4ec 0%, transparent 55%),
+    radial-gradient(ellipse at 60% 80%, #f48fb1 0%, transparent 50%),
+    linear-gradient(160deg, #fff0f5 0%, #fce4ec 50%, #f8bbd0 100%);
+  animation: overlayIn 0.8s ease both;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Corner ornaments */
+.cornerTL, .cornerTR, .cornerBL, .cornerBR {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-color: #e91e8c;
+  border-style: solid;
+  opacity: 0.25;
+}
+.cornerTL { top: 24px; left: 24px; border-width: 2px 0 0 2px; }
+.cornerTR { top: 24px; right: 24px; border-width: 2px 2px 0 0; }
+.cornerBL { bottom: 24px; left: 24px; border-width: 0 0 2px 2px; }
+.cornerBR { bottom: 24px; right: 24px; border-width: 0 2px 2px 0; }
+
+.card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(233, 30, 140, 0.18);
+  border-radius: 4px;
+  padding: 4px;
+  box-shadow:
+    0 40px 80px rgba(194, 24, 91, 0.18),
+    0 8px 24px rgba(233, 30, 140, 0.12),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+  animation: cardIn 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  max-width: 480px;
+  width: 90vw;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.cardInner {
+  border: 1px solid rgba(233, 30, 140, 0.12);
+  border-radius: 2px;
+  padding: 52px 48px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: #e91e8c;
+  text-transform: lowercase;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+
+.name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 5.5rem;
+  font-weight: 700;
+  color: #c2185b;
+  line-height: 1;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.55s ease both;
+  text-shadow: 0 4px 20px rgba(194, 24, 91, 0.2);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.7s ease both;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e91e8c, transparent);
+  max-width: 80px;
+}
+
+.dividerIcon {
+  font-size: 1.1rem;
+}
+
+.date {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 1.6rem;
+  color: #d4a853;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.8s ease both;
+}
+
+.subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: #7a4060;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.9s ease both;
+}
+
+.enterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #e91e8c, #c2185b);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 16px 40px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 24px rgba(194, 24, 91, 0.35);
+  opacity: 0;
+  animation: fadeUp 0.6s 1.05s ease both;
+  position: relative;
+  overflow: hidden;
+}
+
+.enterBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.enterBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(194, 24, 91, 0.45);
+}
+
+.enterBtn:hover::before { opacity: 1; }
+
+.pressing {
+  transform: scale(0.97) !important;
+  box-shadow: 0 4px 12px rgba(194, 24, 91, 0.3) !important;
+}
+
+.btnText {
+  font-style: italic;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 500px) {
+  .cardInner { padding: 40px 28px; }
+  .name { font-size: 4rem; }
+}

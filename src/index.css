@@ -1,0 +1,34 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --rose-deep: #c2185b;
+  --rose-mid: #e91e8c;
+  --rose-blush: #f8bbd0;
+  --rose-pale: #fce4ec;
+  --rose-cream: #fff8f9;
+  --gold: #d4a853;
+  --gold-light: #f0d080;
+  --text-dark: #3a1a28;
+  --text-soft: #7a4060;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: var(--rose-cream);
+  color: var(--text-dark);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
