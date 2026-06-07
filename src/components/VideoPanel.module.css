@@ -102,16 +102,14 @@
 @media (max-width: 900px) {
   .panel {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: auto;
-    bottom: auto;
+    inset: 0 auto auto 0;
     width: 35%;
     height: auto;
+    margin: 0;
     padding: 0;
     align-items: flex-start;
     justify-content: flex-start;
-    z-index: 11;
+    z-index: 20;
     pointer-events: none;
     background: transparent;
   }
