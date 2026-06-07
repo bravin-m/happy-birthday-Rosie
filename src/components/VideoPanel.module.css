@@ -104,7 +104,9 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 44%;
+    top: auto;
+    left: auto;
+    width: 35%;
     height: auto;
     padding: 0;
     align-items: flex-end;
