@@ -129,7 +129,7 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 55%;
+    width: 44%;
     height: auto;
     padding: 0;
     align-items: flex-end;
@@ -139,7 +139,7 @@
   }
 
   .frame {
-    width: 100%;
+    width: max-content;
     gap: 0;
     animation: none;
     opacity: 1;
@@ -151,13 +151,16 @@
   .caption { display: none; }
 
   .photoWrap {
-    width: 100%;
-    aspect-ratio: 4/3;
-    max-height: 38vh;
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    max-height: none;
     border-radius: 16px 0 0 0;
   }
 
   .photo {
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }

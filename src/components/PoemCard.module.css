@@ -184,7 +184,7 @@
   /* Floats centered, 10% from every edge, behind the panels */
   .center {
     position: fixed;
-    inset: 10%;
+    inset: 14%;
     height: auto;
     overflow-y: auto;
     overflow-x: hidden;
